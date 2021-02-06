@@ -131,7 +131,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         self.addChild(tapToStartLabel)
                 
         
-        let fadeInAction = SKAction.fadeIn(withDuration: 0.3)
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
         tapToStartLabel.run(fadeInAction)
         
 //        startNewLevel()
@@ -147,8 +147,6 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         timeLabel.text = "Time: \(counter)"
         literCapacity -= 0.6667
         
-        
-        
         if counter < 1 || cloudCrash >= 3 {
             
             counterTime.invalidate()
@@ -159,40 +157,27 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         
         if cloudCrash == 0 {
             distance += 0.24
-            var b:String = String(format: "%0.2f",distance)
-            distanceLabel.text = "Route: \(b)"
-//            distanceLabel.text = "Strecke: \(distance)"
-            print(distance)
+//            var b:String = String(format: "%0.2f",distance)
+            let y = Double(round(1000 * distance)/1000)
+            distanceLabel.text = "Route: \(y)"
+            print(y)
         }
         if cloudCrash == 1 {
             distance += 0.18
-            var b:String = String(format: "%0.2f",distance)
-            distanceLabel.text = "Route: \(b)"
-//            distanceLabel.text = "Strecke: \(distance)"
-            print(distance)
+//            var b:String = String(format: "%0.2f",distance)
+            let y = Double(round(1000 * distance)/1000)
+            distanceLabel.text = "Route: \(y)"
+            print(y)
         }
         if cloudCrash == 2 {
             distance += 0.12
-            var b:String = String(format: "%0.2f",distance)
-            distanceLabel.text = "Route: \(b)"
-//            distanceLabel.text = "Strecke: \(distance)"
-            print(distance)
+//            var b:String = String(format: "%0.2f",distance.rounded())
+            let y = Double(round(1000 * distance)/1000)
+            distanceLabel.text = "Route: \(y)"
+            print(y)
         }
         
-        
     }
-    
-//    func addScore(){
-//        cloudCrash += 1
-//
-//        if counter == 90 || counter == 60 || counter == 40 || counter == 20{
-//            startNewLevel()
-//        }
-//
-//      print("Cloud crashed : \(cloudCrash)")
-//
-//    }
-    
     
     
     func runGameOver() {

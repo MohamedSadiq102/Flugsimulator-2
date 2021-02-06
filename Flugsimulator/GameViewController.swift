@@ -10,9 +10,6 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,31 +30,6 @@ class GameViewController: UIViewController {
             view.presentScene(scene)                
 
     }
-
-//    var startTime = TimeInterval()
-//    var timer = Timer()
-//    var gameTime:Double = 120
-//
-//
-//    func startGame() {
-//
-//        let aSelector : Selector = Selector(("updateTime"))
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
-//        startTime = NSDate.timeIntervalSinceReferenceDate
-//
-//    }
-//
-//    func updateTime() {
-//        let currentTime = NSDate.timeIntervalSinceReferenceDate
-//        var elapsedTime = currentTime - startTime
-//        let seconds = gameTime-elapsedTime
-//        if seconds > 0 {
-//            elapsedTime -= TimeInterval(seconds)
-////            println("\(Int(seconds))")
-//        } else {
-//            timer.invalidate()
-//        }
-//    }
     
     override var shouldAutorotate: Bool {
         return true

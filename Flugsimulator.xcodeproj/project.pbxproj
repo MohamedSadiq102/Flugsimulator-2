@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330DA7A925CF2E2C00602FB6 /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DA7A825CF2E2C00602FB6 /* UserConfig.swift */; };
 		330F107625CC0D2D000396EB /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330F107525CC0D2D000396EB /* GameOverScene.swift */; };
 		332B92B725A6DD3100EA13F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332B92B625A6DD3100EA13F7 /* AppDelegate.swift */; };
 		332B92B925A6DD3100EA13F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 332B92B825A6DD3100EA13F7 /* GameScene.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330DA7A825CF2E2C00602FB6 /* UserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
 		330F107525CC0D2D000396EB /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		332B92B325A6DD3100EA13F7 /* Flugsimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flugsimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332B92B625A6DD3100EA13F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				332B92B625A6DD3100EA13F7 /* AppDelegate.swift */,
+				330DA7A825CF2E2C00602FB6 /* UserConfig.swift */,
 				332B92B825A6DD3100EA13F7 /* GameScene.sks */,
 				332B92BA25A6DD3100EA13F7 /* Actions.sks */,
 				332B92BC25A6DD3100EA13F7 /* GameScene.swift */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330DA7A925CF2E2C00602FB6 /* UserConfig.swift in Sources */,
 				332B92BD25A6DD3100EA13F7 /* GameScene.swift in Sources */,
 				332B92BF25A6DD3100EA13F7 /* GameViewController.swift in Sources */,
 				330F107625CC0D2D000396EB /* GameOverScene.swift in Sources */,
