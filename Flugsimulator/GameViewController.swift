@@ -10,37 +10,55 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-            
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-                
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
-                
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
-                
-                // Present the scene
-                if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
+//        startGame()
+
+
+            let scene = GameScene(size: CGSize(width: 1536, height: 2048))
                     
-                    view.ignoresSiblingOrder = true
+            let view = self.view as! SKView
+            view.showsFPS = true
+            view.showsNodeCount = true
+            view.ignoresSiblingOrder = true
                     
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
-            }
-        }
+            scene.scaleMode = .aspectFill
+//                    
+//        scene.size = self.view.bounds.size
+            // Present the scene
+            view.presentScene(scene)                
+
     }
 
+//    var startTime = TimeInterval()
+//    var timer = Timer()
+//    var gameTime:Double = 120
+//
+//
+//    func startGame() {
+//
+//        let aSelector : Selector = Selector(("updateTime"))
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+//        startTime = NSDate.timeIntervalSinceReferenceDate
+//
+//    }
+//
+//    func updateTime() {
+//        let currentTime = NSDate.timeIntervalSinceReferenceDate
+//        var elapsedTime = currentTime - startTime
+//        let seconds = gameTime-elapsedTime
+//        if seconds > 0 {
+//            elapsedTime -= TimeInterval(seconds)
+////            println("\(Int(seconds))")
+//        } else {
+//            timer.invalidate()
+//        }
+//    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
