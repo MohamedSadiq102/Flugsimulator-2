@@ -80,7 +80,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         for i in 0...1 {
         
         let background = SKSpriteNode(imageNamed: "background")
-        background.size = self.frame.size
+        background.size = self.size
         background.anchorPoint = CGPoint(x: 0.5, y: 0)
         // when the i = 0, the foto will be buttom of the screen, when 1 at the up of the screen
         background.position = CGPoint(x: self.size.width/2, y: self.size.height*CGFloat(i))

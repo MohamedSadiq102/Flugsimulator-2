@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		330DA7A925CF2E2C00602FB6 /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DA7A825CF2E2C00602FB6 /* UserConfig.swift */; };
+		330DA7AE25CF5A0A00602FB6 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DA7AD25CF5A0A00602FB6 /* MainMenuScene.swift */; };
+		330DA7B325CF77C000602FB6 /* backingAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 330DA7B225CF77C000602FB6 /* backingAudio.mp3 */; };
 		330F107625CC0D2D000396EB /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330F107525CC0D2D000396EB /* GameOverScene.swift */; };
 		332B92B725A6DD3100EA13F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332B92B625A6DD3100EA13F7 /* AppDelegate.swift */; };
 		332B92B925A6DD3100EA13F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 332B92B825A6DD3100EA13F7 /* GameScene.sks */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		330DA7A825CF2E2C00602FB6 /* UserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
+		330DA7AD25CF5A0A00602FB6 /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		330DA7B225CF77C000602FB6 /* backingAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backingAudio.mp3; sourceTree = "<group>"; };
 		330F107525CC0D2D000396EB /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		332B92B325A6DD3100EA13F7 /* Flugsimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flugsimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332B92B625A6DD3100EA13F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,10 +111,12 @@
 		332B92B525A6DD3100EA13F7 /* Flugsimulator */ = {
 			isa = PBXGroup;
 			children = (
+				330DA7AD25CF5A0A00602FB6 /* MainMenuScene.swift */,
 				332B92B625A6DD3100EA13F7 /* AppDelegate.swift */,
 				330DA7A825CF2E2C00602FB6 /* UserConfig.swift */,
 				332B92B825A6DD3100EA13F7 /* GameScene.sks */,
 				332B92BA25A6DD3100EA13F7 /* Actions.sks */,
+				330DA7B225CF77C000602FB6 /* backingAudio.mp3 */,
 				332B92BC25A6DD3100EA13F7 /* GameScene.swift */,
 				330F107525CC0D2D000396EB /* GameOverScene.swift */,
 				33696A9F25CB6C36007EB2FA /* theboldfont.ttf */,
@@ -248,6 +254,7 @@
 				332B92C425A6DD3400EA13F7 /* Assets.xcassets in Resources */,
 				332B92BB25A6DD3100EA13F7 /* Actions.sks in Resources */,
 				33696AA025CB6C36007EB2FA /* theboldfont.ttf in Resources */,
+				330DA7B325CF77C000602FB6 /* backingAudio.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330DA7AE25CF5A0A00602FB6 /* MainMenuScene.swift in Sources */,
 				330DA7A925CF2E2C00602FB6 /* UserConfig.swift in Sources */,
 				332B92BD25A6DD3100EA13F7 /* GameScene.swift in Sources */,
 				332B92BF25A6DD3100EA13F7 /* GameViewController.swift in Sources */,

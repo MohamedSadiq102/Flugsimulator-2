@@ -8,26 +8,38 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController {
 
+    // back in Audio, globaly, in order to not stop
+    var backingAudio = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        startGame()
 
-
-            let scene = GameScene(size: CGSize(width: 1536, height: 2048))
+        let filePath = Bundle.main.path(forResource: "backingAudio", ofType: "mp3")
+        let audioNSURL = NSURL(fileURLWithPath: filePath!)
+        do { backingAudio = try AVAudioPlayer(contentsOf: audioNSURL as URL)}
+        catch { return print("Can't Find The Audio") }
+        // -1 is forever playing
+        backingAudio.numberOfLoops = -1
+        backingAudio.volume = 1
+        backingAudio.play()
+        
                     
-            let view = self.view as! SKView
+        if let view = self.view as! SKView? {
+            
+            let scene = MainMenuScene(size: CGSize(width: 1536, height: 2048))
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+            
             view.showsFPS = true
             view.showsNodeCount = true
-            view.ignoresSiblingOrder = true
-                    
-            scene.scaleMode = .aspectFill
-//                    
-//        scene.size = self.view.bounds.size
-            // Present the scene
-            view.presentScene(scene)                
+
+        
+        }
 
     }
     
