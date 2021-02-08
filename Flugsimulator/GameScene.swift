@@ -42,8 +42,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
     struct PhysicsCategories {
         static let None : UInt32 = 0
         static let Player : UInt32 = 0b1  //binary for 1 -> 0b1
-//        static let Bullet : UInt32 = 0b10, 0b100  // 2
-        static let Cloud  : UInt32 = 0b10   //binary for 4  player & bullet
+        static let Cloud  : UInt32 = 0b10   //binary for 4  player & cloud
     }
     
     func random() -> CGFloat {
@@ -57,6 +56,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
     var gameArea: CGRect
     
     override init(size: CGSize) {
+        // for screnn size, we don't need disappear the air plane behide the left or right frame 
         let maxAspectRatio: CGFloat = 16.0/9.0
         let playableWidth = size.height / maxAspectRatio
         let margin = (size.width - playableWidth) / 2
@@ -105,7 +105,8 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         timeLabel.fontColor = SKColor.black
         timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         timeLabel.position = CGPoint(x: self.size.width*0.09, y: self.size.height + timeLabel.frame.size.height)
-        timeLabel.zPosition = 100 // label will be safely always be on top of everything
+        // label will be safely always be on top of everything
+        timeLabel.zPosition = 100
         self.addChild(timeLabel)
         counter = counterStartValue
         
@@ -127,7 +128,8 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         tapToStartLabel.fontColor = SKColor.black
         tapToStartLabel.zPosition = 1
         tapToStartLabel.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-        tapToStartLabel.alpha = 0 // 1 is normal, 0 is completely seepho , 0.5 is half see "hidden"
+        // 1 is normal, 0 is completely seepho , 0.5 is half see "hidden"
+        tapToStartLabel.alpha = 0
         self.addChild(tapToStartLabel)
                 
         
@@ -157,21 +159,18 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         
         if cloudCrash == 0 {
             distance += 0.24
-//            var b:String = String(format: "%0.2f",distance)
             let y = Double(round(1000 * distance)/1000)
             distanceLabel.text = "Route: \(y)"
             print(y)
         }
         if cloudCrash == 1 {
             distance += 0.18
-//            var b:String = String(format: "%0.2f",distance)
             let y = Double(round(1000 * distance)/1000)
             distanceLabel.text = "Route: \(y)"
             print(y)
         }
         if cloudCrash == 2 {
             distance += 0.12
-//            var b:String = String(format: "%0.2f",distance.rounded())
             let y = Double(round(1000 * distance)/1000)
             distanceLabel.text = "Route: \(y)"
             print(y)
@@ -271,7 +270,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         
         self.addChild(cloud)
         
-        let moveCloud = SKAction.move(to: endPoint, duration: 1.5)
+        let moveCloud = SKAction.move(to: endPoint, duration: 2)
         let deleteCloud = SKAction.removeFromParent()
         let cloudSequence = SKAction.sequence([moveCloud, deleteCloud])
         
@@ -303,8 +302,8 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         
         if body1.categoryBitMask == PhysicsCategories.Player && body2.categoryBitMask == PhysicsCategories.Cloud {
             cloudCrash += 1
+            startNewLevel()
             print("cloudcrash = \(cloudCrash)")
-//            addScore()
             
             // if the player has hit the cloud we can delete the cloud if we want
             // or reduce the speed
@@ -326,10 +325,10 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         var levelDuration = TimeInterval()
 
         switch levelNumber {
-        case 1: levelDuration = 1.2
-        case 2: levelDuration = 0.8
-        case 3: levelDuration = 0.6
-        case 4: levelDuration = 0.4
+        case 1: levelDuration = 2.5
+        case 2: levelDuration = 4
+        case 3: levelDuration = 3.6
+        case 4: levelDuration = 4.4
         default:
             levelDuration = 0.2
             print("can't find level info")
