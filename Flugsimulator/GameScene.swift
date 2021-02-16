@@ -133,7 +133,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         self.addChild(tapToStartLabel)
                 
         
-        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.1)
         tapToStartLabel.run(fadeInAction)
         
 //        startNewLevel()
@@ -193,7 +193,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         }
         
         let changeSceneAction = SKAction.run(changeScene)
-        let waitToChangeScene = SKAction.wait(forDuration: 1)
+        let waitToChangeScene = SKAction.wait(forDuration: 0.2)
         let changeSceneSquence = SKAction.sequence([waitToChangeScene, changeSceneAction])
         self.run(changeSceneSquence)
         
@@ -203,7 +203,7 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
 
         let sceneToMoveTo = GameOverScene(size: self.size)
         sceneToMoveTo.scaleMode = self.scaleMode
-        let myTransition = SKTransition.fade(withDuration: 0.5)
+        let myTransition = SKTransition.fade(withDuration: 0.2)
         self.view!.presentScene(sceneToMoveTo, transition: myTransition)
         
         
@@ -349,14 +349,14 @@ class GameScene:  SKScene, SKPhysicsContactDelegate {
         // the game status will change from pre to in
         currentGameState = gameState.inGame
         // the label will go after tapping on the screen
-        let fadeOutAction = SKAction.fadeOut(withDuration: 0.5)
+        let fadeOutAction = SKAction.fadeOut(withDuration: 0.2)
         let deleteAction = SKAction.removeFromParent()
         let deleteSequence = SKAction.sequence([fadeOutAction, deleteAction])
         tapToStartLabel.run(deleteSequence)
         startCounter()
         
         // Ship should move on the bar this means only y axis is affected
-        let moveShipOntoScreenAction = SKAction.moveTo(y: self.size.height*0.2, duration: 0.5)
+        let moveShipOntoScreenAction = SKAction.moveTo(y: self.size.height*0.2, duration: 0.2)
         let startLevelAction = SKAction.run(startNewLevel)
         let startGameSequence = SKAction.sequence([moveShipOntoScreenAction, startLevelAction])
         player.run(startGameSequence)
